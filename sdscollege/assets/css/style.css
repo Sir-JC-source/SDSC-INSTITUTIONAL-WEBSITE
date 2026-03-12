@@ -1,0 +1,78 @@
+/* --- Multi-level Dropdown --- */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+  display: none;
+}
+
+.dropdown-submenu:hover .dropdown-menu {
+  display: block;
+}
+
+/* --- Carousel Image Size --- */
+.carousel-item img {
+  width: 100%;
+  height: 70vh;       /* adjust to your preferred height (e.g., 70vh or 600px) */
+  object-fit: cover;  /* keeps image proportions while filling the space */
+}
+
+/* --- Responsive Adjustment for Mobile --- */
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 50vh;     /* smaller height on mobile screens */
+  }
+}
+/* --- SIDEWARD DROPDOWN MENU FIX (adds to existing styles) --- */
+
+/* Remove caret (triangle) from top-level Academics */
+.navbar .dropdown-toggle::after {
+  display: none !important;
+}
+
+/* Ensure dropdowns behave consistently */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 0.1rem;
+  display: none;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 0.25rem;
+  background-color: #fff;
+  z-index: 9999;
+}
+
+/* Show submenu on hover */
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+
+/* Optional styling for hover highlighting */
+.dropdown-menu > li:hover > .dropdown-item {
+  background-color: #eaf7ef;
+  color: #198754;
+}
+
+/* Make sure submenus don’t get cut off in narrow screens */
+@media (max-width: 991px) {
+  .dropdown-submenu > .dropdown-menu {
+    left: auto;
+    right: 0;
+    top: 0;
+  }
+}
+/* ECORS vertical text fix */
+.dropdown-submenu > a {
+    white-space: normal !important;
+    line-height: 18px;
+}
+
